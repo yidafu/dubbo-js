@@ -1,3 +1,20 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import {Dubbo, java, TDubboCallResult} from 'dubbo-js';
 
 //=====================types===========================
@@ -29,7 +46,7 @@ export interface IErrorProvider {
 //========================provider=======================
 export const demoProvider = (dubbo: Dubbo): IDemoProvider =>
   dubbo.proxyService({
-    dubboInterface: 'com.alibaba.dubbo.demo.DemoProvider',
+    dubboInterface: 'org.apache.dubbo.demo.DemoProvider',
     methods: {
       sayHello(name: string) {
         return [java.String(name)];
@@ -41,7 +58,7 @@ export const demoProvider = (dubbo: Dubbo): IDemoProvider =>
 
       getUserInfo() {
         return [
-          java.combine('com.alibaba.dubbo.demo.UserRequest', {
+          java.combine('org.apache.dubbo.demo.UserRequest', {
             id: 1,
             name: 'nodejs',
             email: 'node@qianmi.com',
@@ -53,11 +70,11 @@ export const demoProvider = (dubbo: Dubbo): IDemoProvider =>
 
 export const basicTypeProvider = (dubbo: Dubbo): IBasicTypeProvider =>
   dubbo.proxyService({
-    dubboInterface: 'com.alibaba.dubbo.demo.BasicTypeProvider',
+    dubboInterface: 'org.apache.dubbo.demo.BasicTypeProvider',
     methods: {
       testBasicType() {
         return [
-          java.combine('com.alibaba.dubbo.demo.TypeRequest', {
+          java.combine('org.apache.dubbo.demo.TypeRequest', {
             map: java.Map({name: 'test'}),
             bigDecimal: java.BigDecimal('1000.0000'),
           }),
@@ -68,7 +85,7 @@ export const basicTypeProvider = (dubbo: Dubbo): IBasicTypeProvider =>
 
 export const errorProvider = (dubbo: Dubbo): IErrorProvider =>
   dubbo.proxyService({
-    dubboInterface: 'com.alibaba.dubbo.demo.ErrorProvider',
+    dubboInterface: 'org.apache.dubbo.demo.ErrorProvider',
     methods: {
       errorTest() {
         return [];
