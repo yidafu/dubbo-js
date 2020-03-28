@@ -1,5 +1,5 @@
 {
-  "name": "interpret-dubbo2js",
+  "name": "@dovyih/interpret-dubbo2js",
   "version": "0.0.22",
   "description": "interpret java-jar file to typescript files",
   "bin": {
