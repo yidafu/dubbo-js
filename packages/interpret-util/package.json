@@ -1,6 +1,6 @@
 {
   "name": "@dovyih/interpret-util",
-  "version": "0.0.6",
+  "version": "0.0.7-alpha.0",
   "description": "interpret java-jar file to typescript files",
   "main": "./lib/index.js",
   "keywords": [

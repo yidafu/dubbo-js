@@ -1,6 +1,6 @@
 {
   "name": "@dovyih/dubbo-invoker",
-  "version": "1.0.2",
+  "version": "3.0.0-rc.6",
   "description": "dubbo2.js invoke context, set version, group and so on.",
   "keywords": [
     "dubbo2.js",
